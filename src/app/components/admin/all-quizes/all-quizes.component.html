@@ -1,0 +1,10 @@
+<mat-card *ngFor="let quiz of quizes">
+    <mat-card-title>{{quiz.name}}</mat-card-title>
+    <mat-card-content><h3>{{quiz.description}}</h3></mat-card-content>
+    <mat-card-actions>
+        <button color="primary" mat-raised-button routerLink="/welcome-admin/edit-quiz/{{quiz.id}}">edit quiz  <mat-icon>edit</mat-icon></button>
+        <button color="warn" mat-raised-button (click)="deleteQuiz(quiz.id)">delete quiz  <mat-icon>delete</mat-icon></button>
+
+    </mat-card-actions>
+
+</mat-card>

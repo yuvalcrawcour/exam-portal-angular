@@ -1,0 +1,15 @@
+.mainContainer{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 30% 30%;
+    grid-template-columns: 30% 60%;
+
+}
+mat-card{
+    background-color: antiquewhite;
+}
+// div{
+//     height: 100%;
+//     width: 100%;
+// }

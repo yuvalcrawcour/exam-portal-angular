@@ -1,0 +1,14 @@
+#main-container3{
+    height: 70%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 15% 70% 15%;
+}
+mat-card{
+    text-align: center;
+    background-color: antiquewhite;
+}
+.full-width{
+    width: 80%;
+}

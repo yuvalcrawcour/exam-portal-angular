@@ -1,0 +1,25 @@
+<mat-card *ngIf="quiz">
+    <mat-card-title>{{quiz.name}}</mat-card-title>
+    <mat-card-content><h3>{{quiz.description}}</h3></mat-card-content>
+    <mat-card-actions> 
+        <button color="primary" mat-raised-button routerLink="/welcome-admin/all-quizes"><mat-icon>arrow_back</mat-icon> back to all quizes</button>
+        <button color="primary" mat-raised-button routerLink="/welcome-admin/add-question/{{quiz.id}}" >add question <mat-icon>add</mat-icon></button>
+        <button color="warn" mat-raised-button routerLink="/welcome-admin/all-quizes" (click)="deleteQuiz()">delete quiz <mat-icon>delete</mat-icon></button>
+
+    </mat-card-actions>
+
+</mat-card>
+<router-outlet></router-outlet>
+<mat-card *ngFor="let question of quiz.questions">
+    <mat-card-title>{{question.question}}</mat-card-title>
+    <mat-card-content>
+        <div><span>1) {{question.firstAnswer}}   </span><span style="margin-left: 30px;">2) {{question.secondAnswer}}</span></div>
+        <div><span>3) {{question.thirdAnswer}}   </span><span style="margin-left: 30px;">4) {{question.forthAnswer}}</span></div>
+        <div>right answer : {{question.rightAnswer}}</div>
+    </mat-card-content>
+    <mat-card-actions>
+          <button color="warn" mat-raised-button (click)="deleteQuestion(question.id)">delete question <mat-icon>delete</mat-icon></button>
+
+    </mat-card-actions>
+
+</mat-card>

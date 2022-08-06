@@ -1,0 +1,19 @@
+
+#container{
+    height:90%;
+    width: 100%;
+    background-image:url('../../../../assets/image.png');
+    background-size: cover;
+
+}
+#innerContainer{
+    color: aliceblue;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -200px;
+    text-align: center;
+}

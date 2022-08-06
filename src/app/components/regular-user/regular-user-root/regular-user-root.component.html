@@ -1,0 +1,7 @@
+<div *ngIf="!isUser()">you have to sign in as a regular user to see this content</div>
+<div id="main-container" *ngIf="isUser()">
+    <app-sidebar-regular>
+        
+    </app-sidebar-regular>
+    <div><router-outlet></router-outlet></div>
+</div>

@@ -1,0 +1,22 @@
+<div id="container">
+
+
+    <mat-card id="innerContainer">
+        <img style="height: 150px; width:150px;" src="assets/computer.png" alt="no luck">
+        <h1>Login Here!!</h1>
+        <form action="">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>user name</mat-label>
+                <input #userNameInput required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>password</mat-label>
+                <input #passwordInput required matInput type="password" placeholder="Enter here" />
+            </mat-form-field>
+            <br/>
+            <button color="primary" mat-raised-button (click)="login(userNameInput.value,passwordInput.value)"> Login </button>
+            <button color="accent" style="margin-left:20px;" mat-raised-button (click)="passwordInput.value='';userNameInput.value=''"> Clear</button>
+        </form>
+    </mat-card>
+</div>

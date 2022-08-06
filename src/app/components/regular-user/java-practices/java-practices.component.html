@@ -1,0 +1,10 @@
+<div id="mainContainer">
+    <mat-card *ngFor="let challenge of codingChallenges" >
+    <mat-card-title>{{challenge.title}}</mat-card-title>
+    <mat-card-content><h3>{{challenge.description}}</h3></mat-card-content>
+    <mat-card-actions>
+        <button color="primary" mat-raised-button routerLink="/welcome-user/coding-challenge/{{challenge.id}}">try challenge</button>
+    </mat-card-actions>
+
+</mat-card>
+</div>

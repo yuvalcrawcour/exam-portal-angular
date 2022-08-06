@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="nav-bar">
+    <div><span id="exam-portal">exam portal</span> 
+        <span><img src="assets/book2.png" alt="no luck"></span></div>
+
+    <div>
+        <span *ngIf="!isSignedIn()"><a class="ref" routerLink="/home" routerLinkActive="active-link">Home</a></span>
+        <span *ngIf="!isSignedIn()"><a class="ref" routerLink="/login" routerLinkActive="active-link">Login</a></span>
+        <span *ngIf="!isSignedIn()"><a class="ref" routerLink="/register" routerLinkActive="active-link">Register</a></span>
+        <span *ngIf="isSignedIn()">user: {{userName}}</span>
+        <span *ngIf="isSignedIn()"><a class="ref" (click)="logout()" routerLink="/home" routerLinkActive="active-link">log out</a></span>
+    </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

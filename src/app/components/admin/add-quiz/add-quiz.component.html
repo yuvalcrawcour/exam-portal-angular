@@ -1,0 +1,22 @@
+<div id="main-container2">
+    <div></div>
+    <mat-card> 
+        <h1>add new quiz</h1>
+        <form action="">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>quiz name</mat-label>
+                <input #quizNameInput required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>quiz description</mat-label>
+                <input style="height:60px;" #quizDescriptionInput required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+
+            <br/>
+
+            <button color="primary" mat-raised-button (click)="addQuiz(quizNameInput.value,quizDescriptionInput.value)"> Add Quiz</button>
+        </form>
+    </mat-card>
+    <div></div>
+</div>

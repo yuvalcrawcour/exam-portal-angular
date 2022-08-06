@@ -1,0 +1,20 @@
+<mat-card *ngIf="codingChallenge">
+    <mat-card-title>{{codingChallenge.title}}</mat-card-title>
+    <mat-card-content><h3>{{codingChallenge.instructions1}}{{codingChallenge.instructions2}}</h3>
+    
+        <mat-form-field>
+            <mat-label>enter your code</mat-label>
+            <textarea #textArea matInput value="{{codingChallenge.startCode}}"></textarea>
+        </mat-form-field>
+
+    </mat-card-content>
+
+
+
+    <mat-card-actions> 
+        <button color="primary" mat-raised-button routerLink="/welcome-user/java-practices"><mat-icon>arrow_back</mat-icon> back to java practices</button>
+        <button color="primary" mat-raised-button (click)="submit(textArea.value)"><mat-icon>check_circle</mat-icon> submit</button>
+
+    </mat-card-actions>
+
+</mat-card>

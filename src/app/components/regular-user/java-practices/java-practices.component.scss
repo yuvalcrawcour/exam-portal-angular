@@ -1,0 +1,18 @@
+mat-card{
+    margin: 15px;
+    background-color: antiquewhite;
+    text-align: center;
+    width: 180px;
+    height: 180px;
+}
+mat-card-header{
+    text-align: center;
+}
+
+#mainContainer{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns:20% 20% 20% 20% 20%  ;
+}

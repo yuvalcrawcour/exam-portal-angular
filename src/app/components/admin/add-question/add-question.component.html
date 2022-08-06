@@ -1,0 +1,43 @@
+<div id="main-container3">
+    <div></div>
+    <mat-card> 
+        <h1>add new question </h1>
+        <form action="">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>question</mat-label>
+                <input style="height: 60px;" name="question" #questionInput="ngModel" [(ngModel)]="questionToAdd.question" required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field appearance="outline">
+                <mat-label>first answer</mat-label>
+                <input name="first" #firstAnswerInput="ngModel" [(ngModel)]="questionToAdd.firstAnswer" required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>second answer</mat-label>
+                <input  name="second" #secondAnswerInput="ngModel" [(ngModel)]="questionToAdd.secondAnswer" required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field appearance="outline">
+                <mat-label>third answer</mat-label>
+                <input name="third" #thirdAnswerInput="ngModel" [(ngModel)]="questionToAdd.thirdAnswer" required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>forth answer</mat-label>
+                <input name="forth" #forthAnswerInput="ngModel" [(ngModel)]="questionToAdd.forthAnswer" required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field appearance="outline">
+                <mat-label>right answer (1-4)</mat-label>
+                <input name="right" #rightAnswerInput="ngModel" [(ngModel)]="questionToAdd.rightAnswer" required matInput type="text" placeholder="Enter here" matInput/>
+            </mat-form-field>
+            <br/>
+            <button color="primary" mat-raised-button routerLink="/welcome-admin/edit-quiz/{{quizId}}"><mat-icon>arrow_back</mat-icon> back edit quiz</button>
+            <button style="margin-left: 20px ;" color="primary" mat-raised-button (click)="addQuestion()"> Add question</button>
+            
+        </form>
+    </mat-card>
+    <div></div>
+</div>

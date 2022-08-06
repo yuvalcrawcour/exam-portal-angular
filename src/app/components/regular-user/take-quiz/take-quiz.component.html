@@ -1,0 +1,47 @@
+<div *ngIf="quiz" id="main-container">
+    <div></div>
+    <mat-card id="containerFinished" *ngIf="this.finished">
+        <mat-card-title><h1>exam finished</h1></mat-card-title>
+        <mat-card-content>
+            <h2>you answered {{this.correctAnswers}} right out of {{this.correctAnswers+this.wrongAnswers}}</h2>
+            
+            <h2 *ngIf="this.grade<=55">you failed the exam</h2>
+            <h2 *ngIf="this.grade>55 && this.grade<70">you passed the exam</h2>
+            <h2 *ngIf="this.grade>=70 && this.grade<85">very nice</h2>
+            <h2 *ngIf="this.grade>=85">excellent</h2>
+
+        </mat-card-content> 
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" routerLink="/welcome-user/all-quizes"><mat-icon>arrow_back</mat-icon> back to exams</button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card id="container1" *ngIf="!this.finished">
+        <mat-card-title><h1>{{quiz.questions[curQuestionNumber].question}}</h1></mat-card-title>
+
+        <mat-card-content>
+            <mat-radio-group  [(ngModel)]="value" >
+            <div><mat-radio-button [ngClass]="{correct: disabled&&quiz.questions[curQuestionNumber].rightAnswer==1, wrong:value==1&&disabled&&quiz.questions[curQuestionNumber].rightAnswer!=1}" value=1>1) {{quiz.questions[curQuestionNumber].firstAnswer}}</mat-radio-button></div>
+            <div ><mat-radio-button [ngClass]="{correct: disabled&&quiz.questions[curQuestionNumber].rightAnswer==2, wrong:value==2&&disabled&&quiz.questions[curQuestionNumber].rightAnswer!=2}" value=2>2) {{quiz.questions[curQuestionNumber].secondAnswer}}</mat-radio-button></div>
+            <div><mat-radio-button [ngClass]="{correct: disabled&&quiz.questions[curQuestionNumber].rightAnswer==3, wrong:value==3&&disabled&&quiz.questions[curQuestionNumber].rightAnswer!=3}" value=3>3) {{quiz.questions[curQuestionNumber].thirdAnswer}}</mat-radio-button></div>
+            <div><mat-radio-button [ngClass]="{correct: disabled&&quiz.questions[curQuestionNumber].rightAnswer==4, wrong:value==4&&disabled&&quiz.questions[curQuestionNumber].rightAnswer!=4}" value=4>4) {{quiz.questions[curQuestionNumber].forthAnswer}}</mat-radio-button></div>
+        </mat-radio-group>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button [disabled]="disabled" mat-raised-button color="primary" (click)="submitAnswer()"> submit answer  </button>
+            <button *ngIf="this.curQuestionNumber<this.quiz.questions.length-1" [disabled]="!disabled" mat-raised-button color="primary" (click)="goToNextQuestion()"> next question  </button>
+            <button mat-raised-button color="primary" [disabled]="!disabled" (click)="this.finishQuiz()" *ngIf="this.curQuestionNumber==this.quiz.questions.length-1" > finish exam</button>
+        </mat-card-actions>
+
+
+        
+    </mat-card>
+    <mat-card id="container2" *ngIf="!this.finished">
+    <div><mat-spinner mode="determinate" value="{{timeLeft*100/60}}"></mat-spinner></div>
+    <br/>
+    <div *ngIf="timeLeft>=0">time left: {{timeLeft}}</div>
+    <div *ngIf="timeLeft<0">time over</div>
+    </mat-card>
+</div>

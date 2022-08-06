@@ -1,0 +1,29 @@
+<mat-card >
+    <mat-action-list>
+        <h1>Menu</h1>
+
+
+        <button mat-list-item routerLink="/welcome-user/java-practices">
+            <mat-icon mat-list-icon>assignment</mat-icon>
+            Java-practice
+        </button>
+
+        <button mat-list-item routerLink="/welcome-user/all-quizes">
+            <mat-icon mat-list-icon>assignment_turned_in</mat-icon>
+            Take a Quiz
+        </button>
+
+        
+        <button mat-list-item routerLink="/welcome-user/profile">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            Profile
+        </button>
+
+        <button mat-list-item (click)="logout()" routerLink="/home">
+            <mat-icon mat-list-icon>logout</mat-icon>
+            Logout
+        </button>
+
+
+    </mat-action-list>
+</mat-card>

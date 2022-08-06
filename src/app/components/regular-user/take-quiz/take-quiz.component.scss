@@ -1,0 +1,35 @@
+#main-container{
+    height: 70%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 10% 60% 15%;
+}
+#container1{
+    text-align: center;
+    background-color: antiquewhite;
+}
+#containerFinished{
+    text-align: center;
+    background-color: antiquewhite;
+}
+#container2{
+    text-align: center;
+    background-color: antiquewhite;
+    height: fit-content;
+}
+mat-card-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 50px ;
+    font-size: medium;
+}
+.full-width{
+    width: 80%;
+}
+.correct{
+    background-color: greenyellow;
+}
+.wrong{
+    background-color: red;
+}

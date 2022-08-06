@@ -1,0 +1,7 @@
+<div *ngIf="!isAdmin()">you have to sigh in as admin to see this content</div>
+<div id="main-container" *ngIf="isAdmin()">
+    <app-sidebar>
+        
+    </app-sidebar>
+    <div><router-outlet></router-outlet></div>
+</div>
